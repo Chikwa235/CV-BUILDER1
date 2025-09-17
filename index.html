@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-BUILDER</title>
+      <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body class="modern">
+ 
+  <h3>EMPLOYMENT DATA - CONFIDENTIAL</h3>
+<div class="builder">
+    <label for="themeSelector">Select Theme:</label>
+    <select id="themeSelector">
+      <option value="modern" selected>Modern</option>
+      <option value="elegant">Elegant</option>
+      <option value="minimal">Minimal</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+      <label for="profilePic">Profile Picture (optional):</label>
+      <input type="file" id="profilePic" accept="image/*" />
+      <img id="profilePreview" src="" alt="Profile Preview" />
+  </div>
+
+   <div class="input-group">
+    <label>Forenames</label>
+    <input type="text" id="forenames" />
+    <label>Middle Name</label>
+    <input type="text" id="middleName" />
+    <label>Surname</label>
+    <input type="text" id="surname" />
+  </div>
+
+  <div class="input-group">
+    <label>Gender</label>
+    <input type="text" id="gender" />
+    <label>Date of Birth</label>
+    <input type="date" id="dob" />
+    <label>Marital Status</label>
+    <input type="text" id="marital" />
+    <label>No. of Children</label>
+    <input type="number" id="children" />
+  </div>
+
+
+  <div class="input-group">
+    <label>Nationality</label>
+    <input type="text" id="nationality" />
+    <label>National ID / NRC #</label>
+    <input type="text" id="nrc" />
+    <label>TPIN</label>
+    <input type="text" id="tpin" />
+    <label>NAPSA SSN</label>
+    <input type="text" id="napsa" />
+  </div>
+
+  <div class="input-group">
+    <label>Postal Address</label>
+    <input type="text" id="postal" />
+    <label>Guardian / Company</label>
+    <input type="text" id="guardian" />
+    <label>Town</label>
+    <input type="text" id="postalTown" />
+  </div>
+
+   <div class="input-group">
+    <label>Residential Address</label>
+    <input type="text" id="residential" />
+    <label>Plot No.</label>
+    <input type="text" id="plot" />
+    <label>Street</label>
+    <input type="text" id="street" />
+    <label>Township</label>
+    <input type="text" id="township" />
+  </div>
+
+   <div class="input-group">
+    <label>Phone</label>
+    <input type="text" id="phone" />
+    <label>Email Address</label>
+    <input type="email" id="email" />
+    <label>Contact No. (Tel)</label>
+    <input type="text" id="tel" />
+    <label>Location</label>
+    <input type="text" id="location" />
+  </div>
+
+   <div class="input-group">
+    <label>LinkedIn (optional)</label>
+    <input type="text" id="linkedin" />
+    <label>GitHub (optional)</label>
+    <input type="text" id="github" />
+    <label>Portfolio (optional)</label>
+    <input type="text" id="portfolio" />
+  </div>
+
+   <div class="input-group">
+    <label>Professional Summary</label>
+    <textarea id="summary"></textarea>
+    <label>Skills (comma-separated)</label>
+    <input type="text" id="skills" />
+  </div>
+
+   <div class="input-group">
+    <label>Position Applied For</label>
+    <input type="text" id="position" />
+    <label>Alternate Position of Interest</label>
+    <input type="text" id="altPosition" />
+  </div>
+
+  
+  <div class="input-group">
+    <label>State of Health</label>
+    <textarea id="illnesses" placeholder="List any illnesses"></textarea>
+    <textarea id="allergies" placeholder="List any allergies"></textarea>
+  </div>
+
+   <div class="input-group">
+    <label>Disabilities (If any)</label>
+    <input type="text" id="disabilities" />
+    <label>Any other data</label>
+    <textarea id="otherData"></textarea>
+  </div>
+ 
+   <div class="input-group">
+    <label>Special Achievements</label>
+    <textarea id="achievements"></textarea>
+    <label>Special Attributes</label>
+    <textarea id="attributes"></textarea>
+    <label>Languages Spoken</label>
+    <textarea id="languages"></textarea>
+    <label>Hobbies & Pass Time Activities</label>
+    <textarea id="hobbies"></textarea>
+  </div>
+
+  <div class="input-group">
+    <label>What is your expected minimum gross pay?</label>
+    <input type="text" id="expectedPay" />
+    <label>Other Expectations</label>
+    <textarea id="expectations"></textarea>
+    <label>Do you have a valid driver’s license?</label>
+    <input type="text" id="license" />
+    <label>If successful, when would you be ready to start work?</label>
+    <input type="text" id="startDate" />
+    <label>Reason for Leaving Last Employment</label>
+    <textarea id="reasonLeave"></textarea>
+    <label>If not working, indicate current occupation</label>
+    <input type="text" id="currentOccupation" />
+  </div>
+
+  <div class="input-group">
+    <label>Referees (Name, Profession, Address, Contact No.)</label>
+    <textarea id="referee1"></textarea>
+    <textarea id="referee2"></textarea>
+    <textarea id="referee3"></textarea>
+  </div>
+
+  <div class="input-group">
+    <button type="button" onclick="addExperience()"> Add Experience</button>
+    <input type="hidden" id="expCount" value="1">
+    <div id="experienceContainer">
+      <div class="input-group" id="expBlock1">
+        <label>Job Title</label>
+        <input type="text" id="jobTitle1" />
+        <label>Company Name</label>
+        <input type="text" id="company1" />
+        <label>Location (City, Country)</label>
+        <input type="text" id="location1" />
+        <label>Start Date</label>
+        <input type="text" id="expStart1" />
+        <label>End Date (or "Present")</label>
+        <input type="text" id="expEnd1" />
+        <label>Key Responsibilities / Achievements</label>
+        <textarea id="responsibilities1"></textarea>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="input-group">
+    <button type="button" onclick="addEducation()"> Add Education</button>
+    <input type="hidden" id="eduCount" value="1">
+    <div id="educationContainer">
+      <div class="input-group" id="eduBlock1">
+        <label>Institution</label>
+        <input type="text" id="institution1" />
+        <label>Degree / Diploma (optional)</label>
+        <input type="text" id="degree1" />
+        <label>Field of Study / Major</label>
+        <input type="text" id="field1" />
+        <label>Year Started</label>
+        <input type="text" id="yearStart1" />
+        <label>Year Completed</label>
+        <input type="text" id="yearEnd1" />
+        <label>Grade / GPA (optional)</label>
+        <input type="text" id="grade1" />
+      </div>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <label>Certifications & Learning</label>
+    <textarea id="certifications_and_Learning"></textarea>
+    <label>Additional Info</label>
+    <textarea id="additional"></textarea>
+  </div>
+
+   <button class="btn" id="generateBtn">Generate CV</button>
+    <button class="btn" id="downloadBtn">Download CV</button>
+
+    <pre id="output"></pre>
+    <p id="errorMsg" >
+    Please fill in all required fields before proceeding.
+    </p>
+
+    <div class="input-group">
+  <p class="warning-text">
+    ⚠️ Please make sure you have downloaded your CV and attach it to the email before applying.
+  </p>
+</div>
+
+  <button id="applyBtn" onclick="applyOnline()">Apply Online</button>
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>

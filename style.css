@@ -1,0 +1,243 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: white;
+  --primary-color: #10b981;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+  transition: background 0.5s, color 0.5s;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.builder {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+  transition: background 0.5s;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #334155;
+  color: var(--text-color);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  background: transparent;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+#themeSelector {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+#profilePreview {
+  display: block;
+  margin: 1rem auto 1.5rem auto;
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  object-fit: cover;
+}
+
+.btn {
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #059669;
+}
+
+#errorMsg {
+  color: red;
+  font-weight: bold;
+  display: none;
+  margin-top: 1rem;
+}
+
+#output {
+  background: var(--bg-color);
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-family: monospace;
+  color: var(--text-color);
+}
+
+#styledPreview.hidden-preview {
+  margin-top: 2rem;
+  background: #fff;
+  color: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  display: none;
+}
+
+body.modern {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: white;
+  --primary-color: #10b981;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.elegant {
+  --bg-color: #fdf6f0;
+  --card-bg: #fff8f0;
+  --text-color: #4a3c31;
+  --primary-color: #b56969;
+  font-family: 'Georgia', serif;
+}
+
+body.elegant input,
+body.elegant textarea,
+body.elegant select {
+  background: #f3e8e8;
+  color: #4a3c31;
+}
+
+body.elegant #output {
+  background: #fff8f0;
+  color: #4a3c31;
+  font-family: 'Georgia', serif;
+}
+
+body.elegant .btn {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+body.elegant .btn:hover {
+  background: #925252;
+}
+
+body.elegant #profilePreview {
+  border-color: var(--primary-color);
+}
+
+body.minimal {
+  --bg-color: #ffffff;
+  --card-bg: #f5f5f5;
+  --text-color: #222222;
+  --primary-color: #333333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body.minimal input,
+body.minimal textarea,
+body.minimal select {
+  background: #e0e0e0;
+  color: #222222;
+}
+
+body.minimal #output {
+  background: #f5f5f5;
+  color: #222222;
+  font-family: 'Courier New', monospace;
+}
+
+body.minimal .btn {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+body.minimal .btn:hover {
+  background: #555555;
+}
+
+body.minimal #profilePreview {
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .builder {
+    padding: 1rem;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    font-size: 0.95rem;
+  }
+
+  #styledPreview {
+    padding: 1rem;
+  }
+
+}
+
+#applyBtn {
+   background: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+#applyBtn:hover {
+  background: #059669;
+}
+
+h2, h3, p {
+  text-align: center;
+}
+
+
+.warning-text {
+  color: red;
+  font-weight: bold;
+}
